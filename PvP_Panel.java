@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PvP_Panel extends JPanel implements ActionListener {
-//    JLabel[] labels = new JLabel[9];
     JButton[] buttons = new JButton[9];
     boolean c = true;
     Result result = new Result();
@@ -12,20 +11,9 @@ public class PvP_Panel extends JPanel implements ActionListener {
 
     PvP_Panel() {
         for (int i = 0; i < 9; i++) {
-//            labels[i] = new JLabel();
             buttons[i] = new JButton();
+            buttons[i].addActionListener(this);
         }
-
-//        labels[0].setBounds(0, 0, 100, 100);
-//        labels[1].setBounds(100, 0, 100, 100);
-//        labels[2].setBounds(200, 0, 100, 100);
-//        labels[3].setBounds(0, 100, 100, 100);
-//        labels[4].setBounds(100, 100, 100, 100);
-//        labels[5].setBounds(200, 100, 100, 100);
-//        labels[6].setBounds(0, 200, 100, 100);
-//        labels[7].setBounds(100, 200, 100, 100);
-//        labels[8].setBounds(200, 200, 100, 100);
-
         buttons[0].setBounds(0, 0, 100, 100);
         buttons[1].setBounds(100, 0, 100, 100);
         buttons[2].setBounds(200, 0, 100, 100);
@@ -36,12 +24,9 @@ public class PvP_Panel extends JPanel implements ActionListener {
         buttons[7].setBounds(100, 200, 100, 100);
         buttons[8].setBounds(200, 200, 100, 100);
 
-        for (int i = 0; i < 9; i++) buttons[i].addActionListener(this);
-
         this.setLayout(null);
         this.setBounds(100, 100, 500, 500);
         for (int i = 0; i < 9; i++) {
-//            this.add(labels[i]);
             this.add(buttons[i]);
         }
         this.add(result);
